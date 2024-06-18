@@ -20,32 +20,32 @@ rm setup-cache.sh
 
 printf "\n"
 
+ip_addr=$(hostname -I | awk '{print $1}')
+
+echo "machine IP: $ip_addr"
 # Prompt the user for IPs
-printf '--------------------------------- DNS IP --------------------------------'
-printf '  Please provide the DNS IPs that you use\n'
-printf '  If you wish to provide multiple they need to be seperated by a space:\n'
-printf '    (Ex) DNS IP Address: \e[1;34m8.8.8.8 8.8.4.4\n\e[0m'
-printf ' DNS IP Address: \e[34m'
+printf "--------------------------------- DNS IP --------------------------------"
+printf "  Please provide the DNS IPs that you use\n"
+printf "  If you wish to provide multiple they need to be seperated by a space:\n"
+printf "    (Ex) DNS IP Address: \e[1;34m8.8.8.8 8.8.4.4\n\e[0m"
+printf " DNS IP Address: \e[34m"
 read -r dns_addr 
 
 printf "\n\e[0m"
 
-printf '------------------------------ MONITOR IP ------------------------------'
-printf '  This is the only IP that can access the nginx admin console\n'
-printf '  All other connections to the server will be denied\n'
-printf '  Note: This IP that you select should be able to successfully ping this server\n'
-printf '  \e[1;31mWARNING:\e[0m if you set this to \e[1;31mall\e[0m, any person on the same LAN can monitor these servers\e[0m\n\n'
-printf '    (Ex) Monitor IP Address: \e[1;34m127.0.0.1\n\e[0m'
-printf 'Monitor IP Address: \e[34m'
+printf "------------------------------ MONITOR IP ------------------------------"
+printf "  This is the only IP that can access the nginx admin console\n"
+printf "  All other connections to the server will be denied\n"
+printf "  Note: This IP that you select should be able to successfully ping this server\n"
+printf "  \e[1;31mWARNING:\e[0m if you set this to \e[1;31mall\e[0m, any person on the same LAN can monitor these servers\e[0m\n\n"
+printf "    (Ex) Monitor IP Address: \e[1;34m127.0.0.1\n\e[0m"
+printf "Monitor IP Address: \e[34m"
 read -r mon_addr
 
 printf "\n\e[0m"
 
 
 ### Edit the nginx.conf file located at /etc/nginx/nginx.conf ###
-ip_addr=$(hostname -I | awk '{print $1}')
-
-echo "machine IP: $ip_addr"
 
 old_dns="        resolver 8.8.8.8 8.8.4.4 ipv6=off;"
 new_dns="        resolver $dns_addr ipv6=off;"
