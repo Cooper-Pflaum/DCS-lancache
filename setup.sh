@@ -22,11 +22,11 @@ printf "\n"
 
 # Prompt the user for IPs
 echo '--------------------------------- DNS IP --------------------------------'
-printf '  Please provide the DNS IPs that you use\n'
-printf '  If you wish to provide multiple they need to be seperated by a space:\n'
-printf '    (Ex) DNS IP Address: \e[1;34m8.8.8.8 8.8.4.4\n\e[0m'
-printf ' DNS IP Address: \e[34m'
-read dns_addr 
+echo -e '  Please provide the DNS IPs that you use\n'
+echo -e '  If you wish to provide multiple they need to be seperated by a space:\n'
+echo -e '    (Ex) DNS IP Address: \e[1;34m8.8.8.8 8.8.4.4\n\e[0m'
+echo -e ' DNS IP Address: \e[34m'
+read -r dns_addr 
 
 printf "\n\e[0m"
 
@@ -37,7 +37,7 @@ printf '  Note: This IP that you select should be able to successfully ping this
 printf '  \e[1;31mWARNING:\e[0m if you set this to \e[1;31mall\e[0m, any person on the same LAN can monitor these servers\e[0m\n\n'
 printf '    (Ex) Monitor IP Address: \e[1;34m127.0.0.1\n\e[0m'
 printf 'Monitor IP Address: \e[34m'
-read mon_addr
+read -r mon_addr
 
 printf "\n\e[0m"
 

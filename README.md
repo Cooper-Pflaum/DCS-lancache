@@ -10,5 +10,6 @@ It is build on the [Nginx-lancache](https://github.com/mcnc-clovett/nginx_lancac
 ---
 Just paste the command 
 ```
-curl -sSL https://raw.githubusercontent.com/Cooper-Pflaum/DCS-lancache/main/setup.sh > setup.sh && sudo chmod +x setup.sh && sudo ./setup.sh
+curl -sSL https://raw.githubusercontent.com/Cooper-Pflaum/DCS-lancache/main/setup.sh | sudo bash
 ```
+
