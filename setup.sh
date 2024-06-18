@@ -21,16 +21,16 @@ rm setup-cache.sh
 printf "\n"
 
 # Prompt the user for IPs
-echo '--------------------------------- DNS IP --------------------------------'
-echo -e '  Please provide the DNS IPs that you use\n'
-echo -e '  If you wish to provide multiple they need to be seperated by a space:\n'
-echo -e '    (Ex) DNS IP Address: \e[1;34m8.8.8.8 8.8.4.4\n\e[0m'
-echo -e ' DNS IP Address: \e[34m'
+printf '--------------------------------- DNS IP --------------------------------'
+printf '  Please provide the DNS IPs that you use\n'
+printf '  If you wish to provide multiple they need to be seperated by a space:\n'
+printf '    (Ex) DNS IP Address: \e[1;34m8.8.8.8 8.8.4.4\n\e[0m'
+printf ' DNS IP Address: \e[34m'
 read -r dns_addr 
 
 printf "\n\e[0m"
 
-echo '------------------------------ MONITOR IP ------------------------------'
+printf '------------------------------ MONITOR IP ------------------------------'
 printf '  This is the only IP that can access the nginx admin console\n'
 printf '  All other connections to the server will be denied\n'
 printf '  Note: This IP that you select should be able to successfully ping this server\n'
