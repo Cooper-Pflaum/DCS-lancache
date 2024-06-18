@@ -9,5 +9,5 @@ It is build on the [Nginx-lancache](https://github.com/mcnc-clovett/nginx_lancac
 ## Installation:
 Just paste the command 
 ```
-curl -sSL https://raw.githubusercontent.com/Cooper-Pflaum/DCS-lancache/main/setup.sh | bash
+curl -sSL https://raw.githubusercontent.com/Cooper-Pflaum/DCS-lancache/main/setup.sh | sudo bash
 ```
