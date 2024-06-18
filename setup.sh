@@ -45,7 +45,7 @@ printf "\n\e[0m"
 ### Edit the nginx.conf file located at /etc/nginx/nginx.conf ###
 ip_addr=$(hostname -I | awk '{print $1}')
 
-printf "machine IP: $ip_addr"
+echo "machine IP: $ip_addr"
 
 old_dns="        resolver 8.8.8.8 8.8.4.4 ipv6=off;"
 new_dns="        resolver $dns_addr ipv6=off;"
