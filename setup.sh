@@ -59,3 +59,14 @@ sed -i "s|^$old_mon|$new_mon|" "$nginx_conf" # Edits line 223 in /etc/nginx/ngin
 sudo printf '\e[0;37mDRestarting nginx\n\e[0m'
 systemctl restart nginx
 printf '\e[1;32mnginx rebooted successfully\n\n\e[0m'
+
+# Prompt the user to remove the script file
+read -p "Do you want to remove this script file? (y/n) " remove_script
+if [[ $remove_script =~ ^[Yy]$ ]]; then
+    rm -- "$0"
+    printf '\e[1;32mScript file removed successfully.\n\e[0m'
+else
+    printf '\e[1;33mScript file not removed.\n\e[0m'
+fi
+
+
