@@ -1,4 +1,4 @@
-#!/bin/bash -i
+#!/bin/bash
 
 nginx_conf="/etc/nginx/nginx.conf"
 
