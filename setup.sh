@@ -2,6 +2,11 @@
 
 nginx_conf="/etc/nginx/nginx.conf"
 
+
+### Update server ###
+sudo apt update
+sudo apt upgrade -y
+
 ### Download nginx_lancache setup-cache.sh script ###
 sudo printf '\e[0;37mDownloading nginx_lancache...\n\e[0m'
 curl -o ./setup-cache.sh https://raw.githubusercontent.com/mcnc-clovett/nginx_lancache/debian/setup-cache.sh > /dev/null
@@ -14,7 +19,7 @@ printf "\e[1;32mCompleted script\n\n\n\n\e[0m"
 rm setup-cache.sh
 
 
-# Prompt the user for DNS IP
+# Prompt the user for IPs
 echo '--------------------------------- DNS IP --------------------------------'
 printf '  Please provide the DNS IPs that you use                          \n'
 printf '  If you wish to provide multiple they need to be seperated by a space:  \n'
