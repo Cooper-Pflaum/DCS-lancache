@@ -21,7 +21,6 @@ rm setup-cache.sh
 printf "\n"
 
 ip_addr=$(hostname -I | awk '{print $1}')
-
 echo "machine IP: $ip_addr"
 # Prompt the user for IPs
 printf "--------------------------------- DNS IP --------------------------------"
