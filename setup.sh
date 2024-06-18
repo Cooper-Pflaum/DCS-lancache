@@ -18,16 +18,14 @@ sudo chmod +x setup-cache.sh
 ./setup-cache.sh
 rm setup-cache.sh
 
-echo -e "\n"
 
-ip_addr=$(hostname -I | awk '{print $1}')
-echo "machine IP: $ip_addr"
+
 # Prompt the user for IPs
 echo -e "--------------------------------- DNS IP --------------------------------"
 echo -e "  Please provide the DNS IPs that you use\n"
 echo -e "  If you wish to provide multiple they need to be seperated by a space:\n"
 echo -e "    (Ex) DNS IP Address: \e[1;34m8.8.8.8 8.8.4.4\n\e[0m"
-echo -e " DNS IP Address: \e[34m"
+echo -e "DNS IP Address: \e[34m"
 read -r dns_addr 
 
 echo -e "\n\e[0m"
@@ -45,6 +43,7 @@ echo -e "\n\e[0m"
 
 
 ### Edit the nginx.conf file located at /etc/nginx/nginx.conf ###
+ip_addr=$(hostname -I | awk '{print $1}')
 
 old_dns="        resolver 8.8.8.8 8.8.4.4 ipv6=off;"
 new_dns="        resolver $dns_addr ipv6=off;"
