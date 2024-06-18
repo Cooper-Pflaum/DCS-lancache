@@ -8,7 +8,7 @@ sudo apt update
 sudo apt upgrade -y
 
 ### Download nginx_lancache setup-cache.sh script ###
-sudo printf '\e[0;37mDownloading nginx_lancache...\n\e[0m'
+sudo printf '\n\n\e[0;37mDownloading nginx_lancache...\n\e[0m'
 curl -o ./setup-cache.sh https://raw.githubusercontent.com/mcnc-clovett/nginx_lancache/debian/setup-cache.sh > /dev/null
 printf '\e[1;32mFinished nginx_lancache download\n\n\e[0m'
 
