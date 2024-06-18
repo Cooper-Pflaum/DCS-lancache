@@ -1,8 +1,7 @@
-sudo bash -i <<'EOF'
-
 #!/bin/bash -i
 
 nginx_conf="/etc/nginx/nginx.conf"
+
 
 ### Update server ###
 sudo apt update
@@ -42,6 +41,7 @@ read -r mon_addr
 
 printf "\n\e[0m"
 
+
 ### Edit the nginx.conf file located at /etc/nginx/nginx.conf ###
 old_dns="        resolver 8.8.8.8 8.8.4.4 ipv6=off;"
 new_dns="        resolver $dns_addr ipv6=off;"
@@ -49,14 +49,14 @@ new_dns="        resolver $dns_addr ipv6=off;"
 old_lst="        listen 127.0.0.1:8080;"
 new_lst="        listen $(hostname -I):8080;"
 
-old_mon="            allow 127.0.0.1;"
-new_mon="            allow $mon_addr;"
+old_mon="			allow 127.0.0.1;"
+new_mon="			allow $mon_addr;"
 
 sed -i "s|^$old_dns|$new_dns|" "$nginx_conf" # Edits lines 17 and 61 in /etc/nginx/nginx.conf
-sed -i "s|^$old_lst|$new_lst|" "$nginx_conf" # Edits line 218 in /etc/nginx/nginx.conf
+sed -i "s|^$old_lst|$new_lst|" "$nginx_conf" # Edits line 218 in /etc/nginx/nginx.conf 
 sed -i "s|^$old_mon|$new_mon|" "$nginx_conf" # Edits line 223 in /etc/nginx/nginx.conf
 
-sudo printf '\e[0;37mRestarting nginx\n\e[0m'
+sudo printf '\e[0;37mDRestarting nginx\n\e[0m'
 systemctl restart nginx
 printf '\e[1;32mnginx rebooted successfully\n\n\e[0m'
 
@@ -68,4 +68,5 @@ if [[ $remove_script =~ ^[Yy]$ ]]; then
 else
     printf '\e[1;33mScript file not removed.\n\e[0m'
 fi
-EOF
+
+
