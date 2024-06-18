@@ -8,7 +8,7 @@ sudo apt update
 sudo apt upgrade -y
 
 ### Download nginx_lancache setup-cache.sh script ###
-sudo printf '\n\n\e[0;37mDownloading nginx_lancache...\n\e[0m'
+printf '\n\n\e[1;33mDownloading nginx_lancache...\n\e[0m'
 curl -o ./setup-cache.sh https://raw.githubusercontent.com/mcnc-clovett/nginx_lancache/debian/setup-cache.sh > /dev/null
 printf '\e[1;32mFinished nginx_lancache download\n\n\e[0m'
 
@@ -56,7 +56,7 @@ sed -i "s|^$old_dns|$new_dns|" "$nginx_conf" # Edits lines 17 and 61 in /etc/ngi
 sed -i "s|^$old_lst|$new_lst|" "$nginx_conf" # Edits line 218 in /etc/nginx/nginx.conf 
 sed -i "s|^$old_mon|$new_mon|" "$nginx_conf" # Edits line 223 in /etc/nginx/nginx.conf
 
-sudo printf '\e[0;37mDRestarting nginx\n\e[0m'
+printf '\e[0;37mDRestarting nginx\n\e[0m'
 systemctl restart nginx
 printf '\e[1;32mnginx rebooted successfully\n\n\e[0m'
 
