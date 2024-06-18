@@ -48,8 +48,8 @@ ip_addr=$(hostname -I | awk '{print $1}')
 old_dns="        resolver 8.8.8.8 8.8.4.4 ipv6=off;"
 new_dns="        resolver $dns_addr ipv6=off;"
 
-old_lst="        listen 127.0.0.1:8080;"
-new_lst="        listen $ip_addr:8080;"
+old_lst="		listen 127.0.0.1:8080;"
+new_lst="		listen $ip_addr:8080;"
 
 old_mon="			allow 127.0.0.1;"
 new_mon="			allow $mon_addr;"
