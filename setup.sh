@@ -25,7 +25,8 @@ echo -e "--------------------------------- DNS IP ------------------------------
 echo -e "  Please provide the DNS IPs that you use\n"
 echo -e "  If you wish to provide multiple they need to be seperated by a space:\n"
 echo -e "    (Ex) DNS IP Address: \e[1;34m8.8.8.8 8.8.4.4\n\e[0m"
-read -p $"DNS IP Address: \e[34m" dns_addr 
+echo -e -n "DNS IP Address: \e[34m"
+read -r dns_addr 
 
 echo -e "\n\e[0m"
 
@@ -35,14 +36,14 @@ echo -e "  All other connections to the server will be denied\n"
 echo -e "  Note: This IP that you select should be able to successfully ping this server\n"
 echo -e "  \e[1;31mWARNING:\e[0m if you set this to \e[1;31mall\e[0m, any person on the same LAN can monitor these servers\e[0m\n\n"
 echo -e "    (Ex) Monitor IP Address: \e[1;34m127.0.0.1\n\e[0m"
-read -p $"Monitor IP Address: \e[34m" mon_addr
+echo -e -n "Monitor IP Address: \e[34m"
+read -r mon_addr
 
 echo -e "\n\e[0m"
 
 
 ### Edit the nginx.conf file located at /etc/nginx/nginx.conf ###
 ip_addr=$(hostname -I | awk '{print $1}')
-echo -e "$ip_addr"
 
 old_dns="        resolver 8.8.8.8 8.8.4.4 ipv6=off;"
 new_dns="        resolver $dns_addr ipv6=off;"
