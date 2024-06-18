@@ -11,6 +11,7 @@ printf "\e[0;37mRunning nginx_lancache setup script...\n\e[0m"
 sudo chmod +x setup-cache.sh
 ./setup-cache.sh
 printf "\e[1;32mCompleted script\n\n\n\n\e[0m"
+rm setup-cache.sh
 
 
 # Prompt the user for DNS IP
